@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import thunk from 'redux-thunk'
+import resultReducer from '../reducers/resultReducer'
 import viewReducer from '../reducers/viewReducer'
 
 export const store = configureStore({
-  reducer: { viewReducer },
+  reducer: { viewReducer, resultReducer },
   middleware: (curryGetDefaultMiddleware) =>
     curryGetDefaultMiddleware().concat(thunk),
 })
