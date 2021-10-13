@@ -1,3 +1,4 @@
+import { Random } from './Random'
 export default interface ResultState {
-  result: string
+  result: Random
 }

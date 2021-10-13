@@ -20,5 +20,5 @@ export const fetchRandom =
 
     dispatch(viewLoaded())
     console.log(data.originalList)
-    dispatch(randomResult(data.randomList))
+    dispatch(randomResult(data))
   }

@@ -1,3 +1,4 @@
+import { Random } from './../interfaces/Random'
 import { createSlice, PayloadAction, Reducer } from '@reduxjs/toolkit'
 import { ConnectedProps, connect } from 'react-redux'
 
@@ -5,14 +6,19 @@ import ResultState from '../interfaces/ResultState'
 import { RootState } from '../store/store'
 
 const initialState: ResultState = {
-  result: '',
+  result: {
+    date: '',
+    id: '',
+    originalList: '',
+    randomList: '',
+  },
 }
 
 const resultReducer = createSlice({
   name: 'result',
   initialState,
   reducers: {
-    randomResult: (state, action: PayloadAction<string>) => {
+    randomResult: (state, action: PayloadAction<Random>) => {
       return {
         result: action.payload,
       }
