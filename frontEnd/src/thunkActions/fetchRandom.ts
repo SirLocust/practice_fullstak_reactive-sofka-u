@@ -9,7 +9,7 @@ export const fetchRandom =
   (result: string): ThunkAction<void, RootState, unknown, Action<string>> =>
   async (dispatch: AppDispatch) => {
     dispatch(viewLoading())
-    console.log('a')
+
     const url = `http://localhost:8081/random`
     const resp = await fetch(url, {
       method: 'POST',

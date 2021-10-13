@@ -5,8 +5,7 @@ const PageResult: React.FC = () => {
   return (
     <div>
       <FormResult />
-      <hr />
-      <br />
+
       <Result />
     </div>
   )
