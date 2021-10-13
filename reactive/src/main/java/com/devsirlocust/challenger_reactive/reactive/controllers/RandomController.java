@@ -22,8 +22,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-// @CrossOrigin(origins = "")
-@RequestMapping(value = "/r")
+@CrossOrigin(origins = "http://localhost:8080")
+@RequestMapping(value = "/random")
 @AllArgsConstructor
 public class RandomController {
 
@@ -36,7 +36,7 @@ public class RandomController {
       random.setOriginalList(request.getList());
       return random;
     }).map(random -> {
-      var list = Stream.of(request.getList().split(",")).map(String::trim).collect(Collectors.toList());
+      var list = Stream.of(request.getList().split(",")).map(text -> text.trim()).collect(Collectors.toList());
       Collections.shuffle(list);
       var randomList = list.stream().collect(Collectors.joining(","));
       random.setRandomList(randomList);
