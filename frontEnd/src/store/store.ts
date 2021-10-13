@@ -6,6 +6,7 @@ import viewReducer from '../reducers/viewReducer'
 
 export const store = configureStore({
   reducer: { viewReducer, resultReducer },
+
   middleware: (curryGetDefaultMiddleware) =>
     curryGetDefaultMiddleware().concat(thunk),
 })

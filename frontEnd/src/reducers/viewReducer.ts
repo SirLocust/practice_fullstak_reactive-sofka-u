@@ -1,5 +1,7 @@
 import { createSlice, Reducer } from '@reduxjs/toolkit'
+
 import ViewState from '../interfaces/ViewState'
+import { RootState } from '../store/store'
 
 const initialState: ViewState = {
   loading: false,
@@ -23,5 +25,7 @@ const viewReducer = createSlice({
 })
 
 export const { viewLoaded, viewLoading } = viewReducer.actions
+
+export const getViewStateSelector = (state: RootState) => state.viewReducer
 
 export default viewReducer.reducer as Reducer<typeof initialState>
